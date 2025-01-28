@@ -1,0 +1,36 @@
+# Cloud Providers Comparison
+
+This document provides a comparison of key cloud providers: **AWS**, **Azure**, **GCP**, **Oracle Cloud**, and **Alibaba Cloud**.
+
+---
+
+## Comparison Table
+
+| **Category**              | **AWS**                                                | **Azure**                                              | **GCP**                                              | **Oracle Cloud**                                      | **Alibaba Cloud**                                      |
+|---------------------------|-------------------------------------------------------|-------------------------------------------------------|-----------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
+| **Owner**                 | Amazon                                                | Microsoft                                             | Google                                              | Oracle                                                | Alibaba Group                                         |
+| **Market Position**       | Market leader, widely adopted                         | Strong enterprise presence, second in market share   | Focus on AI, ML, and data analytics                 | Enterprise-focused, database leader                  | Leading in Asia-Pacific region                       |
+| **Core Strength**         | Broadest services, scalability                        | Integration with Microsoft ecosystem                 | AI, ML, big data analytics                          | Database services (e.g., Autonomous DB)              | Cost-effective solutions for emerging markets        |
+| **Global Regions**        | 30+                                                   | 60+                                                   | 38+                                                 | 45+                                                   | 29+                                                   |
+| **Popular Services**      | EC2, S3, RDS, Lambda, SageMaker                       | Azure Virtual Machines, SQL Database, Power BI       | Compute Engine, BigQuery, Anthos                    | Oracle DB, OCI Compute, Exadata                      | ECS, RDS, OSS, Alibaba Cloud Function Compute        |
+| **Hybrid Cloud**          | AWS Outposts, ECS Anywhere                            | Azure Arc, Stack                                     | Anthos                                              | Oracle Cloud@Customer                                | Alibaba Hybrid Cloud Solutions                       |
+| **Pricing Model**         | Pay-as-you-go, Reserved, Spot                         | Pay-as-you-go, Reserved                              | Pay-as-you-go, Sustained Use Discounts             | Pay-as-you-go, Universal Credits                    | Pay-as-you-go, Reserved                              |
+| **Machine Learning**      | Amazon SageMaker                                      | Azure Machine Learning                               | Vertex AI                                           | OCI AI Services                                       | PAI (Platform for AI)                                |
+| **Kubernetes Support**    | EKS (Elastic Kubernetes Service)                      | AKS (Azure Kubernetes Service)                      | GKE (Google Kubernetes Engine)                     | Oracle Kubernetes Engine (OKE)                      | Alibaba Container Service for Kubernetes             |
+| **Database Services**     | Amazon RDS, DynamoDB, Aurora                         | Azure SQL, Cosmos DB                                 | Cloud SQL, Firestore                               | Oracle Autonomous DB, Exadata                       | PolarDB, AnalyticDB                                  |
+| **Specialized Areas**     | IoT, Gaming, High Availability, Serverless            | Enterprise Integration, Hybrid Cloud, AI            | Big Data, Analytics, Machine Learning              | Enterprise databases, ERP, Financial Systems        | Emerging markets, APAC leadership                   |
+| **Free Tier**             | 12 months + always free tier                         | 12 months + always free tier                        | 12 months + always free tier                       | Free trial + always free tier                        | 12 months + always free tier                        |
+| **Compliance**            | Extensive, including FedRAMP, HIPAA, GDPR            | Enterprise-grade, FedRAMP, HIPAA, GDPR              | GDPR, HIPAA, SOC 2, PCI DSS                        | FedRAMP, HIPAA, SOC 2, GDPR                          | Local compliance, GDPR, PCI DSS                     |
+| **Target Audience**       | General-purpose, startups to enterprises              | Enterprise-heavy, particularly Microsoft users       | Developers, AI/ML enthusiasts, data-driven orgs    | Enterprises requiring high-performance databases     | Businesses in Asia-Pacific                           |
+| **Notable Weakness**      | Complex pricing model, steep learning curve           | Some services less mature than AWS                  | Smaller global footprint, fewer services overall   | Limited reach compared to AWS/Azure                 | Limited presence outside of Asia-Pacific             |
+
+---
+
+## Key Insights
+- **AWS**: Best for overall versatility, scalability, and broad service offerings.
+- **Azure**: Preferred for enterprises using Microsoft products or requiring hybrid cloud solutions.
+- **GCP**: Excels in AI/ML and data analytics but has fewer services than AWS or Azure.
+- **Oracle Cloud**: Ideal for businesses reliant on Oracle databases or ERP systems.
+- **Alibaba Cloud**: Dominates the APAC region with cost-effective solutions and localized compliance.
+
+---
