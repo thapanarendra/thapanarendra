@@ -1,16 +1,21 @@
-## Hi there 👋
 
-<!--
-**thapanarendra/thapanarendra** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+Professional Background:
+Narendra Thapa is a Strategic Engineering Leader with over 19 years of experience, specializing in cloud strategy, project delivery, software development, team leadership, and people management.
+His expertise spans AWS, Azure, GCP, Oracle Cloud, budget management, business development, high availability (HA), disaster recovery (DR), Skytap, cloud migration, and process optimization.
+Narendra focuses on delivery experience and collaborative leadership to drive impactful results.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Current Focus:
+Implementing AI technologies to grow his business, attract new customers, and improve delivery outcomes.
+Upskilling his engineering team on AI technologies to stay ahead in a competitive market.
+Preparing for leadership roles, including Engineering Director, with an emphasis on delivery experience and strategic growth.
+
+Recent Activities:
+Worked on API development for a Multi-Cloud Management Platform (MCMP) product.
+Advised on Kyndryl Bridge catalog development and recommended skilled professionals for the project.
+Engaged in discussions with industry leaders like Srinivasa Akkinepalli to explore partnership opportunities and enhance business capabilities.
+
+Approach to Work:
+Narendra Thapa is highly customer-focused, emphasizing process improvements, team efficiency, and cost optimization to deliver exceptional value.
+He is adept at creating structured plans to achieve revenue growth, engineering efficiency, and client satisfaction.
+
