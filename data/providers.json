@@ -1,0 +1,59 @@
+{
+  // File: providers.json
+  // Absolute path shown above.
+  // Summary: Canonical source of truth consumed by the static site.
+  // Note: This file will be updated by the GitHub Action. Modify samples/ or configure URLs via repo secrets.
+  "lastUpdated": "2025-09-07T08:00:00Z",
+  "providers": {
+    "AWS": {
+      "compute": { "name": "EC2", "price_usd_per_hour": 0.096 },
+      "storage": { "gb_month_usd": 0.023 },
+      "network": { "bandwidth_gb_price_usd": 0.09 },
+      "database": { "managed": true, "engines": ["RDS MySQL", "Aurora"], "managed_price_month_usd": 35 },
+      "kubernetes": { "managed": true },
+      "regions": 30,
+      "sla": 99.99,
+      "free_tier": true
+    },
+    "Azure": {
+      "compute": { "name": "VM", "price_usd_per_hour": 0.10 },
+      "storage": { "gb_month_usd": 0.0208 },
+      "network": { "bandwidth_gb_price_usd": 0.07 },
+      "database": { "managed": true, "engines": ["Azure SQL", "CosmosDB"], "managed_price_month_usd": 32 },
+      "kubernetes": { "managed": true },
+      "regions": 60,
+      "sla": 99.95,
+      "free_tier": true
+    },
+    "GCP": {
+      "compute": { "name": "Compute Engine", "price_usd_per_hour": 0.094 },
+      "storage": { "gb_month_usd": 0.020 },
+      "network": { "bandwidth_gb_price_usd": 0.08 },
+      "database": { "managed": true, "engines": ["Cloud SQL", "Spanner"], "managed_price_month_usd": 30 },
+      "kubernetes": { "managed": true },
+      "regions": 28,
+      "sla": 99.95,
+      "free_tier": true
+    },
+    "OracleCloud": {
+      "compute": { "name": "OCI VM", "price_usd_per_hour": 0.07 },
+      "storage": { "gb_month_usd": 0.025 },
+      "network": { "bandwidth_gb_price_usd": 0.085 },
+      "database": { "managed": true, "engines": ["Autonomous DB"], "managed_price_month_usd": 40 },
+      "kubernetes": { "managed": true },
+      "regions": 25,
+      "sla": 99.95,
+      "free_tier": true
+    },
+    "AlibabaCloud": {
+      "compute": { "name": "ECS", "price_usd_per_hour": 0.065 },
+      "storage": { "gb_month_usd": 0.018 },
+      "network": { "bandwidth_gb_price_usd": 0.06 },
+      "database": { "managed": true, "engines": ["ApsaraDB MySQL"], "managed_price_month_usd": 28 },
+      "kubernetes": { "managed": true },
+      "regions": 20,
+      "sla": 99.90,
+      "free_tier": false
+    }
+  }
+}
