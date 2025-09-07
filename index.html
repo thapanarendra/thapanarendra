@@ -1,1 +1,42 @@
+<!--
+  File: index.html
+  Absolute path shown above.
+  Summary: Entry page for CloudCompare. Loads CSS/JS from assets/ and reads data/providers.json.
+  Notes: Host this file at repo root for GitHub Pages (main branch, root).
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CloudCompare — Thapanarendra</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>CloudCompare</h1>
+      <p class="subtitle">Live comparison of AWS, Azure, GCP, Oracle Cloud & Alibaba Cloud — compute, storage, network, DB and more</p>
+      <div class="controls">
+        <button id="refreshBtn" aria-label="Refresh data">Refresh</button>
+        <span id="status" role="status">Loading…</span>
+      </div>
+    </div>
+  </header>
 
+  <main class="wrap">
+    <section id="cards" class="grid" aria-live="polite"></section>
+
+    <section class="table-section" aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading">Side-by-side comparison</h2>
+      <div id="tableWrap"></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <small>Data auto‑updated via GitHub Actions. Raw JSON: <code>/data/providers.json</code></small>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
