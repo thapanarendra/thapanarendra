@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cloud Compare — Thapanarendra</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- Script: index.html
+       Purpose: Cloud providers comparison UI -->
+  <header>
+    <h1>Cloud Compare</h1>
+    <p class="lead">Compare compute, network, storage, database and other core services across AWS, Azure, GCP, Oracle and Alibaba.</p>
+  </header>
+
+  <section class="controls">
+    <label>Metric:
+      <select id="metric">
+        <option value="compute.price_usd_per_hour">Compute ($/hour)</option>
+        <option value="storage.gb_month_usd">Storage ($/GB·month)</option>
+        <option value="network.bandwidth_gb_price_usd">Network ($/GB)</option>
+        <option value="database.managed">Managed DB</option>
+        <option value="regions">Regions</option>
+        <option value="sla">SLA (%)</option>
+      </select>
+    </label>
+    <button id="refresh">Refresh</button>
+    <span id="lastUpdated" class="muted"></span>
+  </section>
+
+  <main id="main">
+    <div id="table-wrap">Loading...</div>
+  </main>
+
+  <footer>
+    <small>Data source: <code>data/providers.json</code> (update this file to change values).</small>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
