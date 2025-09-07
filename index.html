@@ -1,42 +1,42 @@
+// filepath: public/index.html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cloud Compare — Thapanarendra</title>
+  <title>CloudCompare — dynamic multi‑cloud</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
-  <!-- Script: index.html
-       Purpose: Cloud providers comparison UI -->
-  <header>
-    <h1>Cloud Compare</h1>
-    <p class="lead">Compare compute, network, storage, database and other core services across AWS, Azure, GCP, Oracle and Alibaba.</p>
+  <header class="site-header">
+    <h1>CloudCompare</h1>
+    <p class="subtitle">Compare compute, network, storage, database and more — live</p>
+    <div class="controls">
+      <select id="regionFilter"><option value="global">All regions</option></select>
+      <button id="refreshBtn">Refresh now</button>
+      <span id="status" class="status">Loading…</span>
+    </div>
   </header>
 
-  <section class="controls">
-    <label>Metric:
-      <select id="metric">
-        <option value="compute.price_usd_per_hour">Compute ($/hour)</option>
-        <option value="storage.gb_month_usd">Storage ($/GB·month)</option>
-        <option value="network.bandwidth_gb_price_usd">Network ($/GB)</option>
-        <option value="database.managed">Managed DB</option>
-        <option value="regions">Regions</option>
-        <option value="sla">SLA (%)</option>
-      </select>
-    </label>
-    <button id="refresh">Refresh</button>
-    <span id="lastUpdated" class="muted"></span>
-  </section>
+  <main>
+    <section id="cards" class="grid"></section>
 
-  <main id="main">
-    <div id="table-wrap">Loading...</div>
+    <section class="table-section">
+      <h2>Side-by-side comparison</h2>
+      <div id="tableWrap"></div>
+    </section>
+
+    <section class="chart-section">
+      <h2>Compute price comparison</h2>
+      <canvas id="priceChart" height="120"></canvas>
+    </section>
   </main>
 
   <footer>
-    <small>Data source: <code>data/providers.json</code> (update this file to change values).</small>
+    <small>Data from edge aggregator — updates automatically. Built by Thapanarendra.</small>
   </footer>
 
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js" defer></script>
 </body>
 </html>
