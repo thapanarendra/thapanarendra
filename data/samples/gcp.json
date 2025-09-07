@@ -1,0 +1,12 @@
+{
+  // Sample GCP normalized data
+  "compute": { "name": "Compute Engine", "price_usd_per_hour": 0.094 },
+  "storage": { "gb_month_usd": 0.020 },
+  "network": { "bandwidth_gb_price_usd": 0.08 },
+  "database": { "managed": true, "engines": ["Cloud SQL", "Spanner"], "managed_price_month_usd": 30 },
+  "kubernetes": { "managed": true },
+  "regions": 28,
+  "region_list": ["us-central1","europe-west1"],
+  "sla": 99.95,
+  "free_tier": true
+}
