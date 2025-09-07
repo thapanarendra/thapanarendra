@@ -1,0 +1,12 @@
+{
+  // Sample Alibaba Cloud normalized data
+  "compute": { "name": "ECS", "price_usd_per_hour": 0.065 },
+  "storage": { "gb_month_usd": 0.018 },
+  "network": { "bandwidth_gb_price_usd": 0.06 },
+  "database": { "managed": true, "engines": ["ApsaraDB MySQL", "PolarDB"], "managed_price_month_usd": 28 },
+  "kubernetes": { "managed": true },
+  "regions": 20,
+  "region_list": ["cn-hangzhou","ap-southeast-1"],
+  "sla": 99.90,
+  "free_tier": false
+}
