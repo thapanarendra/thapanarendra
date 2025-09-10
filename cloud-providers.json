@@ -1,9 +1,3 @@
-/*
-  File: cloud-providers.json
-  Summary: Data source for the Major Cloud Providers comparison page.
-           Contains an array of cloud provider objects with name, description, strengths, weaknesses, market share, and links.
-  Usage: Loaded dynamically by cloud-comparison.html to display provider details.
-*/
 {
   "providers": [
     {
