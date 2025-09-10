@@ -1,0 +1,28 @@
+// File: devops-tools.json
+// Summary: Data source for DevOps Tools Comparison page.
+// Usage: Loaded by devops-tools.html to display tool details.
+{
+  "tools": [
+    {
+      "name": "Jenkins",
+      "description": "Open-source automation server for CI/CD.",
+      "strength": "Highly extensible, large plugin ecosystem.",
+      "weakness": "Manual scaling, UI can be dated.",
+      "link": "https://www.jenkins.io/"
+    },
+    {
+      "name": "GitHub Actions",
+      "description": "CI/CD workflows integrated with GitHub repositories.",
+      "strength": "Easy setup, native GitHub integration.",
+      "weakness": "Limited for complex enterprise workflows.",
+      "link": "https://github.com/features/actions"
+    },
+    {
+      "name": "GitLab CI",
+      "description": "Integrated CI/CD for GitLab projects.",
+      "strength": "Built-in with GitLab, good for end-to-end DevOps.",
+      "weakness": "Requires GitLab ecosystem.",
+      "link": "https://docs.gitlab.com/ee/ci/"
+    }
+  ]
+}
