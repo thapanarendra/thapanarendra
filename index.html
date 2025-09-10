@@ -1,6 +1,6 @@
 <!--
   File: index.html
-  Summary: Personal portal for Narendra Thapa. Dynamic homepage with profile, comparison links, and flashing AI/Cloud news sidebars.
+  Summary: Personal portal for Narendra Thapa. Dynamic homepage with profile, comparison links, and a single right sidebar for flashing AI and Cloud/Tech news.
   Usage: Main landing page for GitHub Pages portfolio.
 -->
 
@@ -18,46 +18,46 @@
     .section-title { margin-top: 2rem; margin-bottom: 1rem; }
     .profile-img { width: 120px; border-radius: 50%; box-shadow: 0 0 10px #0072ff44; }
     .link-list a { text-decoration: none; }
-    /* Sidebars */
-    #ai-news-sidebar, #cloud-news-sidebar {
+    /* Right Sidebar */
+    #news-sidebar {
       position: fixed;
       top: 0;
-      width: 300px;
+      right: 0;
+      width: 320px;
       height: 100vh;
       z-index: 1000;
+      background: #004d40;
       color: #fff;
-      padding: 1rem;
+      padding: 2rem 1rem 1rem 1rem;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
-    #ai-news-sidebar { left: 0; background: #1a237e; }
-    #cloud-news-sidebar { right: 0; background: #004d40; }
     #ai-news-marquee, #cloud-news-marquee {
-      margin-top: 1rem;
-      height: 90vh;
-      overflow: hidden;
+      margin-bottom: 2rem;
+      height: 2.5rem;
       font-size: 1.1rem;
       font-weight: bold;
+      display: flex;
+      align-items: center;
     }
-    /* Main content margin to avoid sidebar overlap */
-    .container { margin-left: 320px; margin-right: 320px; }
+    #cloud-news-marquee {
+      margin-bottom: 0;
+    }
+    .container { margin-right: 340px; }
     @media (max-width: 900px) {
-      #ai-news-sidebar, #cloud-news-sidebar { display: none; }
+      #news-sidebar { display: none; }
       .container { margin: 0; }
     }
   </style>
 </head>
 <body>
-  <!-- Left Sidebar: AI News -->
-  <div id="ai-news-sidebar">
+  <!-- Right Sidebar: News -->
+  <div id="news-sidebar">
     <h4>Latest AI News</h4>
     <div id="ai-news-marquee"></div>
-  </div>
-  <!-- Right Sidebar: Cloud/Tech News -->
-  <div id="cloud-news-sidebar">
-    <h4>Latest Cloud & Tech News</h4>
+    <h4 class="mt-4">Latest Cloud & Tech News</h4>
     <div id="cloud-news-marquee"></div>
   </div>
 
@@ -156,7 +156,7 @@
         });
       });
 
-    // Flashing AI News Sidebar
+    // Flashing AI News (top right)
     fetch('ai-news.json')
       .then(r => r.json())
       .then(data => {
@@ -170,7 +170,7 @@
         setInterval(showNews, 3000);
       });
 
-    // Flashing Cloud/Tech News Sidebar
+    // Flashing Cloud/Tech News (below AI news)
     fetch('cloud-news.json')
       .then(r => r.json())
       .then(data => {
