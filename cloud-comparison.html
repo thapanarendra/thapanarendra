@@ -1,0 +1,52 @@
+<!--
+  File: cloud-comparison.html
+  Summary: Dynamic comparison page for major cloud providers.
+           Loads data from cloud-providers.json and displays each provider's details.
+           Includes a link to return to the homepage.
+  Usage: Linked from index.html; shows cloud provider differentiation.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Major Cloud Providers Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Major Cloud Providers Comparison</h1>
+    <div id="cloud-providers" class="row g-4"></div>
+    <div class="mt-4 text-center">
+      <a href="index.html" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </div>
+  <script>
+    fetch('cloud-providers.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('cloud-providers');
+        data.providers.forEach(provider => {
+          container.innerHTML += `
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">${provider.name}</h5>
+                  <p class="card-text">${provider.description}</p>
+                  <ul class="list-group list-group-flush mb-2">
+                    <li class="list-group-item"><strong>Strength:</strong> ${provider.strength}</li>
+                    <li class="list-group-item"><strong>Weakness:</strong> ${provider.weakness}</li>
+                    <li class="list-group-item"><strong>Market Share:</strong> ${provider.market_share}</li>
+                  </ul>
+                  <a href="${provider.link}" class="btn btn-primary" target="_blank">Learn More</a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      });
+  </script>
+</body>
+</html>
