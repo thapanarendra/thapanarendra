@@ -1,8 +1,3 @@
-/*
-  File: technologies.json
-  Summary: Dynamic data for Technologies & Expertise section on homepage.
-  Usage: Loaded by index.html to display technology cards.
-*/
 {
   "technologies": [
     {
