@@ -1,0 +1,28 @@
+// File: monitoring-solutions.json
+// Summary: Data source for Monitoring Solutions Comparison page.
+// Usage: Loaded by monitoring-solutions.html to display solution details.
+{
+  "solutions": [
+    {
+      "name": "Zabbix",
+      "description": "Open-source monitoring for networks, servers, and cloud.",
+      "strength": "Highly customizable, free.",
+      "weakness": "Complex setup for large environments.",
+      "link": "https://www.zabbix.com/"
+    },
+    {
+      "name": "Prometheus",
+      "description": "Cloud-native monitoring and alerting toolkit.",
+      "strength": "Great for Kubernetes and cloud workloads.",
+      "weakness": "Limited long-term storage.",
+      "link": "https://prometheus.io/"
+    },
+    {
+      "name": "Datadog",
+      "description": "SaaS monitoring for cloud-scale applications.",
+      "strength": "Easy integration, rich dashboards.",
+      "weakness": "Cost for large deployments.",
+      "link": "https://www.datadoghq.com/"
+    }
+  ]
+}
