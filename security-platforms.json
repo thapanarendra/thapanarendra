@@ -1,0 +1,28 @@
+// File: security-platforms.json
+// Summary: Data source for Security Platforms Comparison page.
+// Usage: Loaded by security-platforms.html to display platform details.
+{
+  "platforms": [
+    {
+      "name": "CrowdStrike Falcon",
+      "description": "Cloud-native endpoint protection and threat intelligence.",
+      "strength": "Fast detection, strong cloud integration.",
+      "weakness": "Premium pricing.",
+      "link": "https://www.crowdstrike.com/"
+    },
+    {
+      "name": "SentinelOne",
+      "description": "AI-powered endpoint security and automated response.",
+      "strength": "Autonomous response, easy deployment.",
+      "weakness": "Limited integrations.",
+      "link": "https://www.sentinelone.com/"
+    },
+    {
+      "name": "Microsoft Defender",
+      "description": "Integrated security for Microsoft environments.",
+      "strength": "Best for Windows and Azure users.",
+      "weakness": "Less effective outside MS ecosystem.",
+      "link": "https://www.microsoft.com/en-us/security/business/threat-protection/microsoft-defender"
+    }
+  ]
+}
