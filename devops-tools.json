@@ -1,6 +1,4 @@
-// File: devops-tools.json
-// Summary: Data source for DevOps Tools Comparison page.
-// Usage: Loaded by devops-tools.html to display tool details.
+
 {
   "tools": [
     {
