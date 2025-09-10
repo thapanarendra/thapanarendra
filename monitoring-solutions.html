@@ -1,0 +1,52 @@
+<!--
+  File: monitoring-solutions.html
+  Summary: Dynamic comparison page for major monitoring solutions.
+           Loads data from monitoring-solutions.json and displays each solution's details.
+           Includes a link to return to the homepage.
+  Usage: Linked from index.html; shows monitoring solution differentiation.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoring Solutions Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Monitoring Solutions Comparison</h1>
+    <!-- Dynamic cards will be loaded here -->
+    <div id="monitoring-solutions" class="row g-4"></div>
+    <div class="mt-4 text-center">
+      <a href="index.html" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </div>
+  <!-- Loads and displays monitoring solutions from JSON -->
+  <script>
+    fetch('monitoring-solutions.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('monitoring-solutions');
+        data.solutions.forEach(solution => {
+          container.innerHTML += `
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">${solution.name}</h5>
+                  <p class="card-text">${solution.description}</p>
+                  <ul class="list-group list-group-flush mb-2">
+                    <li class="list-group-item"><strong>Strength:</strong> ${solution.strength}</li>
+                    <li class="list-group-item"><strong>Weakness:</strong> ${solution.weakness}</li>
+                  </ul>
+                  <a href="${solution.link}" class="btn btn-primary" target="_blank">Learn More</a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      });
+  </script>
+</body>
+</html>
