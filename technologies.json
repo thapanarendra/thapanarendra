@@ -1,0 +1,33 @@
+/*
+  File: technologies.json
+  Summary: Dynamic data for Technologies & Expertise section on homepage.
+  Usage: Loaded by index.html to display technology cards.
+*/
+{
+  "technologies": [
+    {
+      "name": "Artificial Intelligence",
+      "description": "Machine learning, natural language processing, and generative AI for business transformation."
+    },
+    {
+      "name": "Cloud Platforms",
+      "description": "Expertise in Azure, AWS, and GCP for scalable, secure infrastructure and automation."
+    },
+    {
+      "name": "Infrastructure Automation",
+      "description": "DevOps, CI/CD, Infrastructure as Code (Terraform, Ansible), and cross-platform scripting."
+    },
+    {
+      "name": "Enterprise Monitoring",
+      "description": "Design and deployment of Zabbix, Prometheus, and custom monitoring frameworks."
+    },
+    {
+      "name": "Security & Compliance",
+      "description": "Implementing security best practices, identity management, and compliance automation."
+    },
+    {
+      "name": "Open Source & Community",
+      "description": "Active contributor to open-source projects and tech communities."
+    }
+  ]
+}
