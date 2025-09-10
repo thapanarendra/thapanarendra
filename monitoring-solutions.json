@@ -1,6 +1,4 @@
-// File: monitoring-solutions.json
-// Summary: Data source for Monitoring Solutions Comparison page.
-// Usage: Loaded by monitoring-solutions.html to display solution details.
+
 {
   "solutions": [
     {
