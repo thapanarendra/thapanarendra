@@ -1,0 +1,50 @@
+/*
+  File: cloud-providers.json
+  Summary: Data source for the Major Cloud Providers comparison page.
+           Contains an array of cloud provider objects with name, description, strengths, weaknesses, market share, and links.
+  Usage: Loaded dynamically by cloud-comparison.html to display provider details.
+*/
+{
+  "providers": [
+    {
+      "name": "Amazon Web Services (AWS)",
+      "description": "The largest and most mature cloud platform, offering a vast array of services and global reach.",
+      "strength": "Broadest service portfolio, strong enterprise adoption, global infrastructure.",
+      "weakness": "Complex pricing, can be overwhelming for beginners.",
+      "market_share": "32% (2025)",
+      "link": "https://aws.amazon.com/"
+    },
+    {
+      "name": "Microsoft Azure",
+      "description": "Integrated with Microsoft ecosystem, strong in hybrid cloud and enterprise solutions.",
+      "strength": "Best for Microsoft shops, hybrid cloud, and compliance.",
+      "weakness": "Learning curve for non-Microsoft users.",
+      "market_share": "23% (2025)",
+      "link": "https://azure.microsoft.com/"
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "description": "Excels in data analytics, machine learning, and open-source technologies.",
+      "strength": "Best for big data, AI, and Kubernetes.",
+      "weakness": "Smaller enterprise footprint, fewer regions than AWS/Azure.",
+      "market_share": "10% (2025)",
+      "link": "https://cloud.google.com/"
+    },
+    {
+      "name": "Oracle Cloud",
+      "description": "Focused on database, ERP, and enterprise workloads with competitive pricing.",
+      "strength": "Best for Oracle workloads, database migration, and cost efficiency.",
+      "weakness": "Smaller ecosystem, less developer adoption.",
+      "market_share": "4% (2025)",
+      "link": "https://www.oracle.com/cloud/"
+    },
+    {
+      "name": "Alibaba Cloud",
+      "description": "Leading cloud provider in Asia, strong in e-commerce and Chinese market.",
+      "strength": "Best for Asia-Pacific, e-commerce, and scalability.",
+      "weakness": "Limited global presence, language/localization barriers.",
+      "market_share": "4% (2025)",
+      "link": "https://www.alibabacloud.com/"
+    }
+  ]
+}
