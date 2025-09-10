@@ -1,42 +1,40 @@
-<!--
-  File: index.html
-  Absolute path shown above.
-  Summary: Entry page for CloudCompare. Loads CSS/JS from assets/ and reads data/providers.json.
-  Notes: Host this file at repo root for GitHub Pages (main branch, root).
--->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CloudCompare — Thapanarendra</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <title>Top 5 AI Tools Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <h1>CloudCompare</h1>
-      <p class="subtitle">Live comparison of AWS, Azure, GCP, Oracle Cloud & Alibaba Cloud — compute, storage, network, DB and more</p>
-      <div class="controls">
-        <button id="refreshBtn" aria-label="Refresh data">Refresh</button>
-        <span id="status" role="status">Loading…</span>
-      </div>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section id="cards" class="grid" aria-live="polite"></section>
-
-    <section class="table-section" aria-labelledby="comparison-heading">
-      <h2 id="comparison-heading">Side-by-side comparison</h2>
-      <div id="tableWrap"></div>
-    </section>
-  </main>
-
-  <footer class="wrap">
-    <small>Data auto‑updated via GitHub Actions. Raw JSON: <code>/data/providers.json</code></small>
-  </footer>
-
-  <script src="assets/js/app.js" defer></script>
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Top 5 AI Tools in 2025</h1>
+    <div id="ai-tools" class="row g-4"></div>
+  </div>
+  <script>
+    fetch('ai-tools.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('ai-tools');
+        data.tools.forEach(tool => {
+          container.innerHTML += `
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">${tool.name}</h5>
+                  <p class="card-text">${tool.description}</p>
+                  <ul class="list-group list-group-flush mb-2">
+                    <li class="list-group-item"><strong>Provider:</strong> ${tool.provider}</li>
+                    <li class="list-group-item"><strong>Strength:</strong> ${tool.strength}</li>
+                    <li class="list-group-item"><strong>Weakness:</strong> ${tool.weakness}</li>
+                  </ul>
+                  <a href="${tool.link}" class="btn btn-primary" target="_blank">Learn More</a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      });
+  </script>
 </body>
 </html>
