@@ -1,7 +1,7 @@
 <!--
   File: index.html
   Summary: Dynamic, modern homepage for Narendra Thapa.
-           Highlights personal profile, technologies, AI, cloud, infrastructure, and links to latest tech trends.
+           Highlights personal profile, AI, cloud, infrastructure, and links to latest tech trends.
            Includes links to AI tools, cloud providers, security platforms, monitoring solutions, and DevOps tools comparison pages.
            All sections are dynamic and easy to update via JSON files.
   Usage: Main landing page for GitHub Pages portfolio.
@@ -40,13 +40,8 @@
       <div class="d-flex justify-content-center gap-3 mt-3">
         <a href="https://www.linkedin.com/in/narendrathapa/" target="_blank" class="btn btn-light btn-lg">LinkedIn</a>
         <a href="mailto:narendra.thapa@email.com" class="btn btn-outline-light btn-lg">Email</a>
-        <a href="#technologies" class="btn btn-primary btn-lg">Technologies</a>
       </div>
     </div>
-
-    <!-- Technologies Section (Dynamic) -->
-    <h2 class="section-title text-center" id="technologies">Technologies & Expertise</h2>
-    <div id="tech-list" class="row g-4 mb-5"></div>
 
     <!-- AI Tools Section (Dynamic) -->
     <h2 class="section-title text-center">Top AI Tools</h2>
@@ -91,25 +86,6 @@
 
   <!-- Dynamic Content Loader -->
   <script>
-    // Load technologies
-    fetch('technologies.json')
-      .then(r => r.json())
-      .then(data => {
-        const techDiv = document.getElementById('tech-list');
-        data.technologies.forEach(tech => {
-          techDiv.innerHTML += `
-            <div class="col-md-4">
-              <div class="card tech-card shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">${tech.name}</h5>
-                  <p class="card-text">${tech.description}</p>
-                </div>
-              </div>
-            </div>
-          `;
-        });
-      });
-
     // Load AI tools (top 3 preview)
     fetch('ai-tools.json')
       .then(r => r.json())
@@ -145,3 +121,5 @@
         });
       });
   </script>
+</body>
+</html>
