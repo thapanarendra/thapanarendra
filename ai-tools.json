@@ -1,9 +1,9 @@
-<!--
+/*
   File: ai-tools.json
   Summary: Data source for the Top 5 AI Tools comparison page.
            Contains an array of AI tool objects with name, provider, description, strengths, weaknesses, and links.
   Usage: Loaded dynamically by ai-tools.html to display tool details.
--->
+*/
 
 {
   "tools": [
