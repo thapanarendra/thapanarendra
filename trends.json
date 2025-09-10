@@ -1,0 +1,34 @@
+/*
+  File: trends.json
+  Summary: Dynamic data for Latest Tech Trends section on homepage.
+  Usage: Loaded by index.html to display trending technology links.
+*/
+{
+  "trends": [
+    {
+      "title": "OpenAI GPT-4o Released",
+      "summary": "The latest multimodal model from OpenAI with improved speed and capabilities.",
+      "link": "https://openai.com/blog/gpt-4o"
+    },
+    {
+      "title": "Google Gemini Expands",
+      "summary": "Gemini now powers more Google Workspace features and APIs.",
+      "link": "https://blog.google/technology/ai/google-gemini-updates/"
+    },
+    {
+      "title": "Anthropic Claude 3 Launch",
+      "summary": "Claude 3 sets new standards for safe, long-context AI.",
+      "link": "https://www.anthropic.com/news/claude-3"
+    },
+    {
+      "title": "Microsoft Copilot Everywhere",
+      "summary": "Copilot now available across Microsoft 365 and Windows.",
+      "link": "https://blogs.microsoft.com/blog/2024/05/21/copilot-everywhere/"
+    },
+    {
+      "title": "Perplexity AI Search Growth",
+      "summary": "Perplexity AI becomes a top choice for real-time, cited answers.",
+      "link": "https://www.perplexity.ai/"
+    }
+  ]
+}
