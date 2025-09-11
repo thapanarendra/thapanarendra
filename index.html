@@ -1,6 +1,6 @@
 <!--
   File: index.html
-  Summary: Professional brand homepage for Narendra Thapa, Technology Delivery Leader. Features hero banner, animated backgrounds, key achievements metrics, core technologies, certifications, and contact section. Includes navigation to full profile page and resume download.
+  Summary: Professional brand homepage for Narendra Thapa, Technology Delivery Leader. Features hero banner, animated backgrounds, key achievements metrics, journey timeline, core technologies, certifications, and contact section. Includes navigation to full profile page and resume download.
   Usage: Main landing page for personal branding and professional promotion on GitHub Pages.
 -->
 
@@ -164,6 +164,121 @@
       border-radius: 3px;
     }
 
+    /* Journey Timeline */
+    .journey-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--brand-blue), var(--brand-cyan));
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: 0;
+      margin-right: 60%;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: 60%;
+      margin-right: 0;
+      text-align: left;
+    }
+    .timeline-marker {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 4px solid var(--brand-blue);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    .timeline-icon {
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      width: 40px;
+      height: 40px;
+      background: var(--brand-blue);
+      border: 4px solid white;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      z-index: 10;
+      box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+    }
+    .timeline-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 114, 255, 0.15);
+    }
+    .timeline-year {
+      color: var(--brand-blue);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-title {
+      color: var(--brand-dark);
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .timeline-description {
+      color: var(--text-primary);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .ai-quote {
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-cyan));
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin: 3rem auto;
+      max-width: 600px;
+      position: relative;
+    }
+    .ai-quote::before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      opacity: 0.3;
+    }
+
     /* Metric Cards */
     .metric-card {
       background: white;
@@ -237,13 +352,6 @@
       border-radius: 25px;
       padding: 2.5rem;
     }
-    .form-input {
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 1.2rem;
-    }
 
     /* Page Footer */
     .page-footer {
@@ -259,6 +367,15 @@
       .hero-tagline { font-size: 1.3rem; }
       .hero-description { font-size: 1.2rem; }
       .profile-image { width: 170px; height: 170px; }
+      .timeline-line { left: 30px; }
+      .timeline-icon { left: 30px; }
+      .timeline-marker { left: 30px; }
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 80px;
+        margin-right: 0;
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -283,6 +400,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link nav-item-custom" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link nav-item-custom" href="profile.html">Full Profile</a></li>
+          <li class="nav-item"><a class="nav-link nav-item-custom" href="#journey">My Journey</a></li>
           <li class="nav-item"><a class="nav-link nav-item-custom" href="#achievements">Achievements</a></li>
           <li class="nav-item"><a class="nav-link nav-item-custom" href="#contact">Contact</a></li>
         </ul>
@@ -313,6 +431,120 @@
         <div class="col-lg-4 text-center">
           <img src="nt_image.png" alt="Narendra Thapa" class="profile-image">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Journey Timeline -->
+  <section id="journey" class="content-section">
+    <div class="container">
+      <h2 class="section-heading">My Journey</h2>
+      <div class="journey-timeline">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-flag"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">1980s-1990s</div>
+            <div class="timeline-title">Army Kid Foundation</div>
+            <div class="timeline-description">
+              Born in Mhow (Army Cantt), Madhya Pradesh to a Gorkha Rifles officer from Nepal. Growing up as an Army kid instilled discipline and adaptability, with schooling across Shimla, Shillong, and Dehradun. This nomadic lifestyle taught me resilience and the ability to thrive in diverse environments.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">Late 1990s</div>
+            <div class="timeline-title">The IT Revolution Begins</div>
+            <div class="timeline-description">
+              Completed Bachelor of Commerce from Shillong during the dawn of the internet era. In my final year, I discovered computers and programming languages. Joined NIIT - a top-tier computer learning institute - marking my first step into the technology world that would define my career.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-network-wired"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2002-2004</div>
+            <div class="timeline-title">The Jetking Discovery</div>
+            <div class="timeline-description">
+              A pivotal moment at Jetking Institute in Indore. Their famous billboard showing a software engineer with no fish vs. a hardware/network professional with a basket full of fish convinced me to pursue Hardware and Networking. This 2.5-year diploma became the foundation of my technical expertise.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-tools"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2005</div>
+            <div class="timeline-title">First Steps as IT Engineer</div>
+            <div class="timeline-description">
+              Landed my first job as Hardware and Network Engineer at Networking Information Services. Managed IT infrastructure for manufacturing industries in Pithampur, learning hands-on about computers, networks, security, and operating systems. This real-world experience was invaluable.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fab fa-redhat"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2005-2007</div>
+            <div class="timeline-title">The Pune Chapter Begins</div>
+            <div class="timeline-description">
+              Moved to Pune to explore new opportunities. Pursued Red Hat Enterprise Linux certification as Linux was gaining popularity. This decision led to joining Symantec (Veritas) as a Quality Assurance Engineer - my entry into the software industry, transitioning from commerce to infrastructure to software.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-server"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2007-2016</div>
+            <div class="timeline-title">The Veritas Decade</div>
+            <div class="timeline-description">
+              10 transformative years at Veritas Technologies. Started as Associate Software Engineer, rose to Principal Software Engineer. Specialized in Unix products (AIX, HP-UX), Veritas Cluster Server, and storage solutions. Learned SDLC, QA, development, leadership, and built lasting professional relationships. The culture and learning at Veritas shaped my career foundation.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2016-Present</div>
+            <div class="timeline-title">GS Lab/Neurealm Era</div>
+            <div class="timeline-description">
+              Joined GS Lab (now Neurealm) seeking vertical growth and services industry experience. Perfect timing with the cloud revolution! Led multiple cloud projects, POCs on AWS and OpenStack. Mastered project management, client relations, business development, and leadership. Witnessed company's PE acquisition by Kedara and rebranding to Neurealm in June 2024.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-cloud"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2015-2022</div>
+            <div class="timeline-title">Cloud Mastery Journey</div>
+            <div class="timeline-description">
+              Became an early cloud advocate, working on multi-cloud projects, cloud orchestration, and FinOps. Earned certifications in AWS, Azure, and GCP. Also expanded into networking and security domains, continuously evolving with technology trends. Added ITIL and Scrum Master certifications to stay current with industry practices.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-brain"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-year">November 2022-Present</div>
+            <div class="timeline-title">The AI Revolution</div>
+            <div class="timeline-description">
+              ChatGPT's launch changed everything! Witnessed the birth of the AI era firsthand. What seemed like Hollywood sci-fi became reality. Quickly adapted to GenAI, prompt engineering, and AI models. Now championing AI adoption across teams and clients, just as I did with cloud technology. The future is AI, and we're living through this incredible transformation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-quote">
+        In the AI era, it's not about replacing humans, but about humans evolving with AI to create unprecedented possibilities.
+        <div style="margin-top: 1rem; font-size: 1rem; opacity: 0.8;">- Narendra Thapa</div>
       </div>
     </div>
   </section>
@@ -461,5 +693,26 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Timeline animation on scroll
+    function animateTimeline() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      
+      timelineItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        if (rect.top < windowHeight * 0.8) {
+          item.classList.add('visible');
+        }
+      });
+    }
+
+    // Initial check
+    animateTimeline();
+
+    // Check on scroll
+    window.addEventListener('scroll', animateTimeline);
+  </script>
 </body>
 </html>
