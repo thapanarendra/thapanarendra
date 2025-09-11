@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Narendra Thapa | Technology Delivery Leader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      color: #222;
+    }
+    .profile-card {
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px #0072ff22;
+      max-width: 900px;
+      margin: 40px auto 24px auto;
+      padding: 2.5rem 2rem 2rem 2rem;
+      position: relative;
+    }
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0072ff;
+      box-shadow: 0 0 24px #00c6ff66;
+      margin-bottom: 1.5rem;
+      background: #fff;
+    }
+    .profile-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .profile-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: #0072ff;
+    }
+    .profile-header h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #004d40;
+      margin-bottom: 0.5rem;
+    }
+    .profile-contact {
+      font-size: 1.08rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+    .profile-contact a {
+      color: #0072ff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .profile-contact a:hover {
+      text-decoration: underline;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2a7ae2;
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      border-bottom: 1px solid #e0e7ff;
+      padding-bottom: 4px;
+    }
+    .achievements-list, .exp-list, .competency-list, .skills-list, .cert-list, .edu-list {
+      margin-bottom: 1.2rem;
+      padding-left: 1.2rem;
+    }
+    .achievements-list li, .exp-list li, .competency-list li, .skills-list li, .cert-list li, .edu-list li {
+      margin-bottom: 0.5rem;
+    }
+    .exp-role {
+      font-weight: 600;
+      color: #0072ff;
+    }
+    .exp-company {
+      font-weight: 500;
+      color: #004d40;
+    }
+    .exp-location, .exp-date {
+      color: #888;
+      font-size: 0.98em;
+    }
+    .badge-skill {
+      background: #eaf4ff;
+      color: #2a7ae2;
+      padding: 6px 14px;
+      border-radius: 16px;
+      font-size: 0.98em;
+      margin: 0 6px 6px 0;
+      display: inline-block;
+    }
+    .footer {
+      text-align: center;
+      background: #e0e7ff;
+      border-radius: 1rem;
+      margin: 32px auto 0 auto;
+      max-width: 900px;
+      box-shadow: 0 2px 8px #0072ff22;
+      padding: 1rem;
+      font-size: 1em;
+      color: #444;
+    }
+    @media (max-width: 700px) {
+      .profile-card { padding: 1rem; }
+      .footer { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="profile-header">
+      <img src="nt_image.png" alt="Narendra Thapa" class="profile-img">
+      <h1>Narendra Thapa</h1>
+      <h2>Technology Delivery Leader | Cloud | Infrastructure | AI Transformation</h2>
+      <div class="profile-contact">
+        <span><i class="fas fa-phone"></i> +91-9923339377</span> &nbsp;|&nbsp;
+        <a href="mailto:narendra.thapa@gmail.com"><i class="fas fa-envelope"></i> narendra.thapa@gmail.com</a> &nbsp;|&nbsp;
+        <a href="https://www.linkedin.com/in/narendra-thapa/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;|&nbsp;
+        <span><i class="fas fa-map-marker-alt"></i> Pune, India</span>
+      </div>
+      <div class="mt-3">
+        <a href="Narendra-Thapa-Resume.pdf" target="_blank" class="btn btn-primary btn-lg"><i class="fas fa-file-pdf"></i> Download Resume (PDF)</a>
+      </div>
+    </div>
+
+    <div class="section-title">Summary</div>
+    <p>
+      Technology Delivery Leader with 20+ years of success in steering cloud, infrastructure, and AI initiatives that accelerate digital transformation and enhance operational resilience. Skilled at aligning technology roadmaps with strategic priorities and leading global teams to deliver measurable improvements in scalability, efficiency, and business outcomes.
+    </p>
+
+    <div class="section-title">Key Achievements</div>
+    <ul class="achievements-list">
+      <li><strong>Managed $7.5M IT portfolio for Fortune 500 clients:</strong> Drove 35% YoY Revenue Growth by transforming a $7.5M technology portfolio into a strategic value driver, aligning high-margin solutions with core business objectives.</li>
+      <li><strong>Pioneered GitHub Copilot AI adoption:</strong> Developed and implemented inaugural Generative AI strategy, championing GitHub Copilot to accelerate product time-to-market by 30% and enhance developer productivity.</li>
+      <li><strong>Delivered 20+ large-scale IT projects:</strong> Achieved 100% on-time delivery and 95% CSAT across multi-cloud, networking, infrastructure, and cybersecurity portfolios; enhanced efficiency by 15% through workflow optimization.</li>
+      <li><strong>Skytap Automation & Zabbix Monitoring:</strong> Architected infrastructure automation, migrating to open-source Zabbix and Azure Monitor, slashing monitoring costs and accelerating deployment cycles by 80%.</li>
+    </ul>
+
+    <div class="section-title">Experience</div>
+    <ul class="exp-list">
+      <li>
+        <span class="exp-role">Director of Engineering</span> <span class="exp-company">Neurealm (formerly GS Lab)</span> <span class="exp-location">Pune, India</span> <span class="exp-date">12/2016 - Present</span>
+        <ul>
+          <li>Built and scaled a 100+ member global engineering team, improving retention by 50% through mentorship and upskilling.</li>
+          <li>Strengthened client partnerships via QBRs/MBRs, aligning technology roadmaps with business goals.</li>
+          <li>Drove 30% portfolio growth by expanding services and securing major SOW renewals.</li>
+          <li>Integrated project planning and QA, improving product quality by 25% and reducing defects.</li>
+          <li>Accelerated adoption of AI, cloud, and modernization, advancing GCP and Azure partnerships.</li>
+          <li>Led cloud-native and multi-cloud adoption (Azure/AWS), cutting infrastructure costs by 30% and reducing release cycles by 40%.</li>
+          <li>Architected Skytap automation, reducing environment setup time and manual effort, accelerating delivery.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="exp-role">Principal SQA Engineer</span> <span class="exp-company">Veritas Technologies</span> <span class="exp-location">Pune, India</span> <span class="exp-date">02/2007 - 12/2016</span>
+        <ul>
+          <li>Designed and implemented Veritas Infoscale features on Linux, AIX, and HP-UX, improving system performance by 30%.</li>
+          <li>Enhanced product quality to 90% via automation, CI, and efficient issue resolution.</li>
+          <li>Optimized workflows by automating environment setups, reducing setup time by 50%.</li>
+          <li>Led cloud deployment POC of Infoscale on OpenStack and AWS.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="exp-role">System Administrator</span> <span class="exp-company">Network Information Services</span> <span class="exp-location">Indore, India</span> <span class="exp-date">02/2005 - 10/2006</span>
+        <ul>
+          <li>Defined and implemented recovery plans, reducing downtime by 20% and boosting efficiency by 25%.</li>
+          <li>Managed backups, servers, patching, and network maintenance with 100% AMC compliance.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="section-title">Core Competencies</div>
+    <ul class="competency-list">
+      <li>Project Management, Team Leadership, Program & Project Governance, Business Development, Strategic Partnerships</li>
+      <li>Agile, Scrum, DevOps Practices, Revenue Growth, Cost Optimization</li>
+    </ul>
+
+    <div class="section-title">Technical Skills</div>
+    <div>
+      <span class="badge-skill">Prompt Engineering</span>
+      <span class="badge-skill">GitHub Copilot</span>
+      <span class="badge-skill">Cursor</span>
+      <span class="badge-skill">AWS</span>
+      <span class="badge-skill">Azure</span>
+      <span class="badge-skill">GCP</span>
+      <span class="badge-skill">VMware</span>
+      <span class="badge-skill">Skytap</span>
+      <span class="badge-skill">Python</span>
+      <span class="badge-skill">Docker</span>
+      <span class="badge-skill">Kubernetes</span>
+      <span class="badge-skill">Commvault</span>
+      <span class="badge-skill">Veeam</span>
+      <span class="badge-skill">FalconStor</span>
+      <span class="badge-skill">AIX</span>
+      <span class="badge-skill">Linux</span>
+    </div>
+
+    <div class="section-title">Trainings & Certifications</div>
+    <ul class="cert-list">
+      <li>Leadership Training (IIM Ahmedabad, Coursera)</li>
+      <li>Artificial Intelligence Certification (Illinois Tech, Coursera)</li>
+      <li>AWS Certified Solution Architect – Professional</li>
+      <li>Google Cloud Certified Professional Cloud Architect</li>
+      <li>Microsoft Certified - Azure Solution Architect Expert</li>
+      <li>Microsoft Certified – Azure AI Engineer Associate</li>
+      <li>Certified Scrum Master (Scrum Alliance)</li>
+      <li>ITIL v4 Foundation Certificate in IT Service Management</li>
+    </ul>
+
+    <div class="section-title">Education</div>
+    <ul class="edu-list">
+      <li><strong>Diploma in Hardware and Networking</strong>, Jetking Infotrain Limited, Indore, India (2002 - 2004)</li>
+      <li><strong>Bachelor of Commerce</strong>, North-Eastern Hill University, Shillong, India (1998 - 2001)</li>
+    </ul>
+  </div>
+  <div class="footer">
+    &copy; 2025 Narendra Thapa. Powered by GitHub Pages.
+  </div>
+</body>
+</html>
