@@ -1,6 +1,6 @@
 <!--
   File: index.html
-  Summary: Personal portal for Narendra Thapa. Homepage with profile, comparison links, and an About Me section with resume link.
+  Summary: Personal portal for Narendra Thapa. Homepage with profile, comparison links, and an About Me section that displays the resume in a modal.
   Usage: Main landing page for GitHub Pages portfolio.
 -->
 
@@ -60,19 +60,16 @@
       margin-bottom: 1.5rem;
       text-shadow: 0 1px 4px #00c6ff44;
     }
-    .hero-links .btn {
+    .hero-links .btn, .about-me-btn {
       font-size: 1.2rem;
       margin: 0 0.5rem;
       box-shadow: 0 2px 8px #0072ff22;
       transition: transform 0.2s;
     }
-    .hero-links .btn:hover {
+    .hero-links .btn:hover, .about-me-btn:hover {
       transform: scale(1.08);
     }
     .about-me-btn {
-      font-size: 1.2rem;
-      margin: 0 0.5rem;
-      box-shadow: 0 2px 8px #0072ff22;
       border-radius: 2rem;
       background: #fff;
       color: #0072ff;
@@ -301,3 +298,6 @@
         aboutMeModal.style.display = "none";
       }
     }
+  </script>
+</body>
+</html>
