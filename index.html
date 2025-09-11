@@ -1,6 +1,6 @@
 <!--
   File: index.html
-  Summary: Personal portal for Narendra Thapa. Dynamic homepage with profile, comparison links, and a single right sidebar for flashing AI and Cloud/Tech news.
+  Summary: Graphics-heavy homepage for Narendra Thapa, featuring a modern hero section, animated backgrounds, icons, and visually engaging comparison links.
   Usage: Main landing page for GitHub Pages portfolio.
 -->
 
@@ -10,20 +10,137 @@
   <meta charset="UTF-8">
   <title>Narendra Thapa | AI, Cloud & Infrastructure Leader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap for layout -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #f8f9fa; }
-    .hero { background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%); color: #fff; padding: 3rem 0; border-radius: 1rem; }
-    .section-title { margin-top: 2rem; margin-bottom: 1rem; }
-    .profile-img { width: 120px; border-radius: 50%; box-shadow: 0 0 10px #0072ff44; }
-    .link-list a { text-decoration: none; }
-    /* Right Sidebar */
+    body {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    }
+    .hero {
+      position: relative;
+      background: linear-gradient(120deg, #0072ff 0%, #00c6ff 100%);
+      color: #fff;
+      padding: 4rem 0 6rem 0;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 32px #0072ff33;
+      margin-bottom: 3rem;
+    }
+    .hero-bg-graphics {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .profile-img {
+      width: 140px;
+      border-radius: 50%;
+      box-shadow: 0 0 24px #00c6ff66;
+      border: 4px solid #fff;
+      margin-bottom: 1.5rem;
+      background: #fff;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px #0072ff44;
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 4px #00c6ff44;
+    }
+    .hero-links .btn {
+      font-size: 1.2rem;
+      margin: 0 0.5rem;
+      box-shadow: 0 2px 8px #0072ff22;
+      transition: transform 0.2s;
+    }
+    .hero-links .btn:hover {
+      transform: scale(1.08);
+    }
+    /* Animated floating icons */
+    .floating-icons {
+      position: absolute;
+      bottom: 0; left: 0; width: 100%; height: 120px;
+      pointer-events: none;
+      z-index: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      opacity: 0.7;
+    }
+    .floating-icons i {
+      font-size: 2.5rem;
+      animation: floatIcon 3s infinite ease-in-out;
+    }
+    .floating-icons i:nth-child(2) { animation-delay: 0.5s; }
+    .floating-icons i:nth-child(3) { animation-delay: 1s; }
+    .floating-icons i:nth-child(4) { animation-delay: 1.5s; }
+    .floating-icons i:nth-child(5) { animation-delay: 2s; }
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-24px); }
+    }
+    /* Comparison Cards */
+    .compare-section {
+      margin-bottom: 3rem;
+    }
+    .compare-card {
+      background: linear-gradient(120deg, #fff 60%, #e0e7ff 100%);
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px #0072ff22;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .compare-card:hover {
+      box-shadow: 0 8px 32px #00c6ff44;
+      transform: translateY(-4px) scale(1.03);
+    }
+    .compare-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0072ff;
+      background: #e0e7ff;
+      border-radius: 50%;
+      padding: 0.5rem;
+      box-shadow: 0 2px 8px #0072ff22;
+      display: inline-block;
+    }
+    .compare-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .compare-btn {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px #0072ff22;
+    }
+    /* News Sidebar */
     #news-sidebar {
       position: fixed;
       top: 0;
       right: 0;
-      width: 320px;
+      width: 340px;
       height: 100vh;
       z-index: 1000;
       background: #004d40;
@@ -33,6 +150,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      box-shadow: -4px 0 16px #004d4022;
     }
     #ai-news-marquee, #cloud-news-marquee {
       margin-bottom: 2rem;
@@ -45,68 +163,115 @@
     #cloud-news-marquee {
       margin-bottom: 0;
     }
-    .container { margin-right: 340px; }
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       #news-sidebar { display: none; }
       .container { margin: 0; }
+    }
+    .container { margin-right: 360px; }
+    /* Latest Tech Trends */
+    #trend-list .list-group-item {
+      background: #fff;
+      border: none;
+      border-bottom: 1px solid #e0e7ff;
+      font-size: 1.08rem;
+      padding: 0.75rem 1rem;
+    }
+    #trend-list .list-group-item a {
+      color: #0072ff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    #trend-list .list-group-item a:hover {
+      text-decoration: underline;
+    }
+    /* Footer */
+    footer {
+      background: #e0e7ff;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      box-shadow: 0 2px 8px #0072ff22;
     }
   </style>
 </head>
 <body>
   <!-- Right Sidebar: News -->
   <div id="news-sidebar">
-    <h4>Latest AI News</h4>
+    <h4><i class="fas fa-robot"></i> Latest AI News</h4>
     <div id="ai-news-marquee"></div>
-    <h4 class="mt-4">Latest Cloud & Tech News</h4>
+    <h4 class="mt-4"><i class="fas fa-cloud"></i> Latest Cloud & Tech News</h4>
     <div id="cloud-news-marquee"></div>
   </div>
 
   <div class="container">
     <!-- Hero Section: About Me -->
     <div class="hero text-center mb-5">
-      <!-- Optional: Add your photo -->
-      <!-- <img src="your-photo.jpg" alt="Narendra Thapa" class="profile-img mb-3"> -->
-      <h1 class="display-4 fw-bold">Narendra Thapa</h1>
-      <h3 class="mb-3">AI, Cloud & Infrastructure Leader</h3>
-      <p class="lead">
-        Architecting the future with automation, artificial intelligence, and cloud innovation.<br>
-        Passionate about building scalable solutions and empowering teams with the latest technologies.
-      </p>
-      <div class="d-flex justify-content-center gap-3 mt-3">
-        <a href="https://www.linkedin.com/in/narendra-thapa/" target="_blank" class="btn btn-light btn-lg">LinkedIn</a>
-        <a href="mailto:narendra.thapa@gmail.com" class="btn btn-outline-light btn-lg">Email</a>
+      <div class="hero-bg-graphics">
+        <!-- SVG animated background graphics -->
+        <svg width="100%" height="100%">
+          <circle cx="10%" cy="20%" r="60" fill="#fff" opacity="0.08"/>
+          <circle cx="80%" cy="10%" r="40" fill="#fff" opacity="0.12"/>
+          <circle cx="50%" cy="80%" r="80" fill="#fff" opacity="0.07"/>
+        </svg>
+      </div>
+      <div class="hero-content">
+        <img src="https://avatars.githubusercontent.com/u/your-github-id" alt="Narendra Thapa" class="profile-img mb-3">
+        <div class="hero-title">Narendra Thapa</div>
+        <div class="hero-subtitle">AI, Cloud & Infrastructure Leader</div>
+        <p class="lead mb-4">
+          Architecting the future with automation, artificial intelligence, and cloud innovation.<br>
+          Passionate about building scalable solutions and empowering teams with the latest technologies.
+        </p>
+        <div class="hero-links mb-3">
+          <a href="https://www.linkedin.com/in/narendra-thapa/" target="_blank" class="btn btn-light btn-lg"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="mailto:narendra.thapa@gmail.com" class="btn btn-outline-light btn-lg"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+      <div class="floating-icons">
+        <i class="fas fa-brain" style="color:#0072ff;"></i>
+        <i class="fas fa-cloud" style="color:#00c6ff;"></i>
+        <i class="fas fa-server" style="color:#004d40;"></i>
+        <i class="fas fa-shield-alt" style="color:#ff1744;"></i>
+        <i class="fas fa-cogs" style="color:#ffb300;"></i>
       </div>
     </div>
 
-    <!-- AI Tools Section (Dynamic) -->
-    <h2 class="section-title text-center">Top AI Tools</h2>
-    <div id="ai-tools" class="row g-4 mb-3"></div>
-    <div class="text-center mb-4">
-      <a href="ai-tools.html" class="btn btn-outline-primary btn-lg m-2">Full AI Tools Comparison</a>
-    </div>
-
-    <!-- Cloud Providers Section: Link to Comparison Page -->
-    <h2 class="section-title text-center">Major Cloud Providers</h2>
-    <div class="text-center mb-4">
-      <a href="cloud-comparison.html" class="btn btn-success btn-lg m-2">Compare Major Cloud Providers</a>
-    </div>
-
-    <!-- Security Platforms Section: Link to Comparison Page -->
-    <h2 class="section-title text-center">Security Platforms</h2>
-    <div class="text-center mb-4">
-      <a href="security-platforms.html" class="btn btn-danger btn-lg m-2">Compare Security Platforms</a>
-    </div>
-
-    <!-- Monitoring Solutions Section: Link to Comparison Page -->
-    <h2 class="section-title text-center">Monitoring Solutions</h2>
-    <div class="text-center mb-4">
-      <a href="monitoring-solutions.html" class="btn btn-info btn-lg m-2">Compare Monitoring Solutions</a>
-    </div>
-
-    <!-- DevOps Tools Section: Link to Comparison Page -->
-    <h2 class="section-title text-center">DevOps Tools</h2>
-    <div class="text-center mb-5">
-      <a href="devops-tools.html" class="btn btn-warning btn-lg m-2">Compare DevOps Tools</a>
+    <!-- Comparison Cards Section -->
+    <div class="row compare-section justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-robot"></i></div>
+          <div class="compare-title">Top AI Tools</div>
+          <a href="ai-tools.html" class="btn btn-outline-primary compare-btn">Full AI Tools Comparison</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-cloud"></i></div>
+          <div class="compare-title">Major Cloud Providers</div>
+          <a href="cloud-comparison.html" class="btn btn-success compare-btn">Compare Major Cloud Providers</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="compare-title">Security Platforms</div>
+          <a href="security-platforms.html" class="btn btn-danger compare-btn">Compare Security Platforms</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-server"></i></div>
+          <div class="compare-title">Monitoring Solutions</div>
+          <a href="monitoring-solutions.html" class="btn btn-info compare-btn">Compare Monitoring Solutions</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-cogs"></i></div>
+          <div class="compare-title">DevOps Tools</div>
+          <a href="devops-tools.html" class="btn btn-warning compare-btn">Compare DevOps Tools</a>
+        </div>
+      </div>
     </div>
 
     <!-- Latest Tech Trends Section (Dynamic) -->
@@ -126,19 +291,21 @@
       .then(r => r.json())
       .then(data => {
         const aiDiv = document.getElementById('ai-tools');
-        data.tools.slice(0,3).forEach(tool => {
-          aiDiv.innerHTML += `
-            <div class="col-md-4">
-              <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">${tool.name}</h5>
-                  <p class="card-text">${tool.description}</p>
-                  <a href="${tool.link}" class="btn btn-primary btn-sm" target="_blank">Learn More</a>
+        if (aiDiv) {
+          data.tools.slice(0,3).forEach(tool => {
+            aiDiv.innerHTML += `
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">${tool.name}</h5>
+                    <p class="card-text">${tool.description}</p>
+                    <a href="${tool.link}" class="btn btn-primary btn-sm" target="_blank">Learn More</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          `;
-        });
+            `;
+          });
+        }
       });
 
     // Latest Tech Trends
