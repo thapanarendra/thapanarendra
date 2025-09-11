@@ -1,0 +1,303 @@
+<!--
+  File: index.html
+  Summary: Personal portal for Narendra Thapa. Homepage with profile, comparison links, and an About Me section that displays the resume in a modal.
+  Usage: Main landing page for GitHub Pages portfolio.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Narendra Thapa | AI, Cloud & Infrastructure Leader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    }
+    .hero {
+      position: relative;
+      background: linear-gradient(120deg, #0072ff 0%, #00c6ff 100%);
+      color: #fff;
+      padding: 4rem 0 6rem 0;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 32px #0072ff33;
+      margin-bottom: 3rem;
+    }
+    .hero-bg-graphics {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .profile-img {
+      width: 140px;
+      border-radius: 50%;
+      box-shadow: 0 0 24px #00c6ff66;
+      border: 4px solid #fff;
+      margin-bottom: 1.5rem;
+      background: #fff;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px #0072ff44;
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 4px #00c6ff44;
+    }
+    .hero-links .btn, .about-me-btn {
+      font-size: 1.2rem;
+      margin: 0 0.5rem;
+      box-shadow: 0 2px 8px #0072ff22;
+      transition: transform 0.2s;
+    }
+    .hero-links .btn:hover, .about-me-btn:hover {
+      transform: scale(1.08);
+    }
+    .about-me-btn {
+      border-radius: 2rem;
+      background: #fff;
+      color: #0072ff;
+      border: 2px solid #0072ff;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+    .about-me-btn:hover {
+      background: #0072ff;
+      color: #fff;
+    }
+    .floating-icons {
+      position: absolute;
+      bottom: 0; left: 0; width: 100%; height: 120px;
+      pointer-events: none;
+      z-index: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      opacity: 0.7;
+    }
+    .floating-icons i {
+      font-size: 2.5rem;
+      animation: floatIcon 3s infinite ease-in-out;
+    }
+    .floating-icons i:nth-child(2) { animation-delay: 0.5s; }
+    .floating-icons i:nth-child(3) { animation-delay: 1s; }
+    .floating-icons i:nth-child(4) { animation-delay: 1.5s; }
+    .floating-icons i:nth-child(5) { animation-delay: 2s; }
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-24px); }
+    }
+    .compare-section {
+      margin-bottom: 3rem;
+    }
+    .compare-card {
+      background: linear-gradient(120deg, #fff 60%, #e0e7ff 100%);
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px #0072ff22;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .compare-card:hover {
+      box-shadow: 0 8px 32px #00c6ff44;
+      transform: translateY(-4px) scale(1.03);
+    }
+    .compare-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0072ff;
+      background: #e0e7ff;
+      border-radius: 50%;
+      padding: 0.5rem;
+      box-shadow: 0 2px 8px #0072ff22;
+      display: inline-block;
+    }
+    .compare-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .compare-btn {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px #0072ff22;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 800px;
+      box-shadow: 0 8px 32px #0072ff33;
+      position: relative;
+    }
+    .close {
+      color: #0072ff;
+      position: absolute;
+      top: 18px;
+      right: 28px;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .close:hover {
+      color: #ff1744;
+    }
+    .resume-iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 0.5rem;
+      background: #f8f9fa;
+    }
+    footer {
+      background: #e0e7ff;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      box-shadow: 0 2px 8px #0072ff22;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section: About Me -->
+    <div class="hero text-center mb-5">
+      <div class="hero-bg-graphics">
+        <svg width="100%" height="100%">
+          <circle cx="10%" cy="20%" r="60" fill="#fff" opacity="0.08"/>
+          <circle cx="80%" cy="10%" r="40" fill="#fff" opacity="0.12"/>
+          <circle cx="50%" cy="80%" r="80" fill="#fff" opacity="0.07"/>
+        </svg>
+      </div>
+      <div class="hero-content">
+        <img src="https://avatars.githubusercontent.com/u/your-github-id" alt="Narendra Thapa" class="profile-img mb-3">
+        <div class="hero-title">Narendra Thapa</div>
+        <div class="hero-subtitle">AI, Cloud & Infrastructure Leader</div>
+        <p class="lead mb-4">
+          Architecting the future with automation, artificial intelligence, and cloud innovation.<br>
+          Passionate about building scalable solutions and empowering teams with the latest technologies.
+        </p>
+        <div class="hero-links mb-3">
+          <a href="https://www.linkedin.com/in/narendra-thapa/" target="_blank" class="btn btn-light btn-lg"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="mailto:narendra.thapa@gmail.com" class="btn btn-outline-light btn-lg"><i class="fas fa-envelope"></i> Email</a>
+          <button class="about-me-btn" id="aboutMeBtn"><i class="fas fa-user"></i> About Me</button>
+        </div>
+      </div>
+      <div class="floating-icons">
+        <i class="fas fa-brain" style="color:#0072ff;"></i>
+        <i class="fas fa-cloud" style="color:#00c6ff;"></i>
+        <i class="fas fa-server" style="color:#004d40;"></i>
+        <i class="fas fa-shield-alt" style="color:#ff1744;"></i>
+        <i class="fas fa-cogs" style="color:#ffb300;"></i>
+      </div>
+    </div>
+
+    <!-- Modal for Resume -->
+    <div id="aboutMeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Resume - Narendra Thapa</h2>
+        <iframe src="Narendra-Thapa-Resume.pdf" class="resume-iframe"></iframe>
+        <div class="mt-3 text-end">
+          <a href="Narendra-Thapa-Resume.pdf" target="_blank" class="btn btn-primary">Download Resume (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Cards Section -->
+    <div class="row compare-section justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-robot"></i></div>
+          <div class="compare-title">Top AI Tools</div>
+          <a href="ai-tools.html" class="btn btn-outline-primary compare-btn">Full AI Tools Comparison</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-cloud"></i></div>
+          <div class="compare-title">Major Cloud Providers</div>
+          <a href="cloud-comparison.html" class="btn btn-success compare-btn">Compare Major Cloud Providers</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="compare-title">Security Platforms</div>
+          <a href="security-platforms.html" class="btn btn-danger compare-btn">Compare Security Platforms</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-server"></i></div>
+          <div class="compare-title">Monitoring Solutions</div>
+          <a href="monitoring-solutions.html" class="btn btn-info compare-btn">Compare Monitoring Solutions</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="compare-card">
+          <div class="compare-icon"><i class="fas fa-cogs"></i></div>
+          <div class="compare-title">DevOps Tools</div>
+          <a href="devops-tools.html" class="btn btn-warning compare-btn">Compare DevOps Tools</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+      <small>&copy; 2025 Narendra Thapa. Powered by GitHub Pages.</small>
+    </footer>
+  </div>
+  <script>
+    // Modal logic
+    const aboutMeBtn = document.getElementById('aboutMeBtn');
+    const aboutMeModal = document.getElementById('aboutMeModal');
+    const closeModal = document.getElementById('closeModal');
+    aboutMeBtn.onclick = function() {
+      aboutMeModal.style.display = "block";
+    }
+    closeModal.onclick = function() {
+      aboutMeModal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == aboutMeModal) {
+        aboutMeModal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
