@@ -1,0 +1,465 @@
+<!--
+  File: index.html
+  Summary: Professional brand homepage for Narendra Thapa, Technology Delivery Leader. Features hero banner, animated backgrounds, key achievements metrics, core technologies, certifications, and contact section. Includes navigation to full profile page and resume download.
+  Usage: Main landing page for personal branding and professional promotion on GitHub Pages.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Narendra Thapa | Technology Delivery Leader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --brand-blue: #0072ff;
+      --brand-cyan: #00c6ff;
+      --brand-dark: #004d40;
+      --text-primary: #222;
+      --bg-soft: #f8fafc;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-soft);
+    }
+
+    /* Dynamic Background */
+    .dynamic-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .orbit-shapes {
+      position: absolute;
+      width: 100%; height: 100%;
+    }
+    .orbit {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.08;
+      animation: orbit 8s linear infinite;
+    }
+    .orbit1 { width: 100px; height: 100px; background: var(--brand-blue); top: 15%; left: 8%; }
+    .orbit2 { width: 140px; height: 140px; background: var(--brand-cyan); top: 55%; right: 12%; animation-delay: 3s; }
+    .orbit3 { width: 80px; height: 80px; background: var(--brand-dark); bottom: 25%; left: 75%; animation-delay: 6s; }
+
+    @keyframes orbit {
+      0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+    }
+
+    /* Navigation Bar */
+    .custom-navbar {
+      background: rgba(255, 255, 255, 0.92) !important;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 3px 25px rgba(0, 114, 255, 0.12);
+      transition: all 0.4s ease;
+    }
+    .brand-logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--brand-blue) !important;
+    }
+    .nav-item-custom {
+      font-weight: 600;
+      color: var(--text-primary) !important;
+      transition: color 0.3s ease;
+    }
+    .nav-item-custom:hover { color: var(--brand-blue) !important; }
+
+    /* Hero Banner */
+    .hero-banner {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-cyan) 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-heading {
+      font-size: 3.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      animation: slideUpFade 1.2s ease-out;
+    }
+    .hero-tagline {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      animation: slideUpFade 1.2s ease-out 0.3s both;
+    }
+    .hero-description {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+      animation: slideUpFade 1.2s ease-out 0.6s both;
+    }
+    .profile-image {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 60px rgba(0, 198, 255, 0.6);
+      animation: zoomInFade 1.2s ease-out 0.9s both;
+    }
+    .action-buttons { animation: slideUpFade 1.2s ease-out 1.2s both; }
+    .action-buttons .btn {
+      margin: 0.6rem;
+      padding: 14px 35px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .action-buttons .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Animations */
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomInFade {
+      from { opacity: 0; transform: scale(0.7); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Section Layout */
+    .content-section { padding: 6rem 0; }
+    .section-heading {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3.5rem;
+      color: var(--brand-blue);
+      position: relative;
+    }
+    .section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--brand-blue), var(--brand-cyan));
+      border-radius: 3px;
+    }
+
+    /* Metric Cards */
+    .metric-card {
+      background: white;
+      border-radius: 25px;
+      padding: 2.5rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      height: 100%;
+    }
+    .metric-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(0, 114, 255, 0.18);
+    }
+    .metric-icon {
+      font-size: 3.5rem;
+      color: var(--brand-blue);
+      margin-bottom: 1.2rem;
+    }
+    .metric-value {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+      margin-bottom: 0.6rem;
+    }
+    .metric-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Technology Badges */
+    .tech-badge {
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-cyan));
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      margin: 0.6rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+    .tech-badge:hover { transform: scale(1.15); }
+
+    /* Certification Items */
+    .cert-item {
+      background: white;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      margin-bottom: 1.5rem;
+      transition: transform 0.4s ease;
+      text-align: center;
+    }
+    .cert-item:hover { transform: translateY(-6px); }
+    .cert-symbol {
+      font-size: 2.2rem;
+      color: var(--brand-blue);
+      margin-bottom: 1.2rem;
+    }
+
+    /* Contact Area */
+    .contact-area {
+      background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-cyan) 100%);
+      color: white;
+    }
+    .contact-container {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 2.5rem;
+    }
+    .form-input {
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      background: var(--text-primary);
+      color: white;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .hero-heading { font-size: 2.8rem; }
+      .hero-tagline { font-size: 1.3rem; }
+      .hero-description { font-size: 1.2rem; }
+      .profile-image { width: 170px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dynamic Background -->
+  <div class="dynamic-bg">
+    <div class="orbit-shapes">
+      <div class="orbit orbit1"></div>
+      <div class="orbit orbit2"></div>
+      <div class="orbit orbit3"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="#home">Narendra Thapa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link nav-item-custom" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-item-custom" href="profile.html">Full Profile</a></li>
+          <li class="nav-item"><a class="nav-link nav-item-custom" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link nav-item-custom" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section id="home" class="hero-banner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 hero-content">
+          <h1 class="hero-heading">Narendra Thapa</h1>
+          <h2 class="hero-tagline">Technology Delivery Leader</h2>
+          <p class="hero-description">
+            Transforming businesses through AI, Cloud, and Infrastructure innovation.<br>
+            20+ years of driving digital excellence and delivering measurable results.
+          </p>
+          <div class="action-buttons">
+            <a href="profile.html" class="btn btn-light btn-lg">
+              <i class="fas fa-user"></i> View Full Profile
+            </a>
+            <a href="Narendra-Thapa-Resume.pdf" target="_blank" class="btn btn-outline-light btn-lg">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img src="nt_image.png" alt="Narendra Thapa" class="profile-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Achievements -->
+  <section id="achievements" class="content-section">
+    <div class="container">
+      <h2 class="section-heading">Key Achievements</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="metric-value">$7.5M</div>
+            <div class="metric-label">IT Portfolio Managed</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fas fa-rocket"></i></div>
+            <div class="metric-value">35%</div>
+            <div class="metric-label">YoY Revenue Growth</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fas fa-projects-diagram"></i></div>
+            <div class="metric-value">20+</div>
+            <div class="metric-label">Large-Scale Projects</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fas fa-users"></i></div>
+            <div class="metric-value">100+</div>
+            <div class="metric-label">Team Members Led</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Technologies -->
+  <section class="content-section bg-light">
+    <div class="container">
+      <h2 class="section-heading">Core Technologies</h2>
+      <div class="text-center">
+        <span class="tech-badge">AWS</span>
+        <span class="tech-badge">Azure</span>
+        <span class="tech-badge">Google Cloud</span>
+        <span class="tech-badge">GitHub Copilot</span>
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">Kubernetes</span>
+        <span class="tech-badge">VMware</span>
+        <span class="tech-badge">Skytap</span>
+        <span class="tech-badge">DevOps</span>
+        <span class="tech-badge">AI/ML</span>
+        <span class="tech-badge">Infrastructure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="content-section">
+    <div class="container">
+      <h2 class="section-heading">Certifications & Awards</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="cert-item">
+            <div class="cert-symbol"><i class="fab fa-aws"></i></div>
+            <div>AWS Certified Solution Architect</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-item">
+            <div class="cert-symbol"><i class="fab fa-microsoft"></i></div>
+            <div>Azure Solution Architect Expert</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-item">
+            <div class="cert-symbol"><i class="fab fa-google"></i></div>
+            <div>GCP Professional Cloud Architect</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-item">
+            <div class="cert-symbol"><i class="fas fa-brain"></i></div>
+            <div>AI Certification (Illinois Tech)</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-item">
+            <div class="cert-symbol"><i class="fas fa-graduation-cap"></i></div>
+            <div>Leadership Training (IIM Ahmedabad)</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-item">
+            <div class="cert-symbol"><i class="fas fa-certificate"></i></div>
+            <div>Certified Scrum Master</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="content-section contact-area">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-container">
+            <h2 class="text-center mb-4" style="color: white;">Let's Connect</h2>
+            <div class="text-center mb-4">
+              <p style="font-size: 1.2rem;">Ready to discuss your next technology initiative?</p>
+            </div>
+            <div class="row text-center">
+              <div class="col-md-4">
+                <a href="mailto:narendra.thapa@gmail.com" class="btn btn-light btn-lg mb-3">
+                  <i class="fas fa-envelope"></i> Email Me
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="https://www.linkedin.com/in/narendra-thapa/" target="_blank" class="btn btn-light btn-lg mb-3">
+                  <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="tel:+919923339377" class="btn btn-light btn-lg mb-3">
+                  <i class="fas fa-phone"></i> Call Me
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <p>&copy; 2025 Narendra Thapa. Technology Delivery Leader. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
