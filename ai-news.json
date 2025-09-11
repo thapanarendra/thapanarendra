@@ -1,9 +1,0 @@
-{
-  "news": [
-    {"title": "OpenAI launches GPT-4o", "link": "https://openai.com/blog/gpt-4o"},
-    {"title": "Google Gemini expands multimodal features", "link": "https://blog.google/technology/ai/google-gemini-updates/"},
-    {"title": "Anthropic releases Claude 3", "link": "https://www.anthropic.com/news/claude-3"},
-    {"title": "Meta unveils Llama 3", "link": "https://ai.meta.com/blog/llama-3/"},
-    {"title": "Perplexity AI hits 10M users", "link": "https://www.perplexity.ai/"}
-  ]
-}
