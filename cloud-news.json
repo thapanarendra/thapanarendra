@@ -1,9 +1,0 @@
-{
-  "news": [
-    {"title": "AWS announces new Graviton chips", "link": "https://aws.amazon.com/blogs/aws/aws-graviton4/"},
-    {"title": "Azure launches confidential VMs", "link": "https://azure.microsoft.com/en-us/blog/confidential-vms/"},
-    {"title": "Google Cloud introduces Gemini AI integration", "link": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-ai-integration"},
-    {"title": "Oracle Cloud expands global regions", "link": "https://blogs.oracle.com/cloud-infrastructure/post/oracle-cloud-expands-global-regions"},
-    {"title": "Alibaba Cloud launches new AI accelerator", "link": "https://www.alibabacloud.com/blog/new-ai-accelerator"}
-  ]
-}
