@@ -363,7 +363,7 @@ section {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
     align-items: center;
 }
@@ -372,6 +372,7 @@ section {
     text-align: left;
     width: 100%;
     overflow: visible;
+    min-width: 0;
 }
 
 .hero-image-container {
@@ -413,12 +414,7 @@ section {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-sm);
     letter-spacing: -1px;
-    line-height: 1.2;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    max-width: 100%;
-    display: block;
+    line-height: 1.4;
 }
 
 .hero-description {
