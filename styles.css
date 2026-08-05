@@ -381,8 +381,9 @@ section {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
+    padding-top: 2rem;
 }
 
 .hero-image {
@@ -415,18 +416,19 @@ section {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: var(--spacing-sm);
     letter-spacing: -1px;
-    line-height: 1.4;
+    line-height: 1.3;
+    font-weight: 700;
 }
 
 .hero-description {
     color: var(--text-secondary);
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     margin-bottom: var(--spacing-lg);
-    max-width: 600px;
-    line-height: 1.6;
+    max-width: 650px;
+    line-height: 1.7;
 }
 
 .hero-btns {
