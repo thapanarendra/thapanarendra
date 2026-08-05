@@ -310,6 +310,7 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: var(--spacing-sm) 0;
     transition: var(--transition);
+    min-height: 110px;
 }
 
 .nav-container {
@@ -358,7 +359,7 @@ section {
     align-items: center;
     justify-content: center;
     background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
-    padding: 8rem 0 4rem;
+    padding: 12rem 0 4rem;
 }
 
 .hero-grid {
