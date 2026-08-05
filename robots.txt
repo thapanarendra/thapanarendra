@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://thapanarendra.github.io/thapanarendra/sitemap.xml
+
+# Disallow specific files if needed
+Disallow: /.DS_Store
+Disallow: /MULTI_PAGE_APPROACH.md
