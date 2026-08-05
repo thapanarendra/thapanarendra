@@ -2326,9 +2326,8 @@ footer {
     font-size: 0.85rem;
     color: #4CAF50;
     border: 1px solid rgba(76, 175, 80, 0.3);
-    white-space: nowrap;
-    max-width: 100%;
-    overflow: visible;
+    flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .badge-dot {
