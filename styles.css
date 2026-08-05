@@ -370,6 +370,8 @@ section {
 
 .hero-text {
     text-align: left;
+    width: 100%;
+    overflow: visible;
 }
 
 .hero-image-container {
@@ -412,6 +414,11 @@ section {
     margin-bottom: var(--spacing-sm);
     letter-spacing: -1px;
     line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+    display: block;
 }
 
 .hero-description {
