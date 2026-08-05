@@ -2320,13 +2320,15 @@ footer {
     align-items: center;
     gap: 0.5rem;
     background: rgba(76, 175, 80, 0.1);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 50px;
     margin-bottom: 1.5rem;
     font-size: 0.85rem;
     color: #4CAF50;
     border: 1px solid rgba(76, 175, 80, 0.3);
     white-space: nowrap;
+    max-width: 100%;
+    overflow: visible;
 }
 
 .badge-dot {
