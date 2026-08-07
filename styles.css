@@ -1267,10 +1267,27 @@ section {
     transform: translateY(-5px);
 }
 
-.cert-icon {
-    font-size: 2rem;
+.cert-issuer {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     color: var(--text-accent);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.cert-icon {
+    font-size: 1.5rem;
+    color: var(--text-accent);
+    margin-bottom: 0.75rem;
+}
+
+.cert-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0;
 }
 
 /* Mobile Responsive Updates */
@@ -1898,6 +1915,7 @@ footer {
 .testimonial-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.04);
+    border-color: var(--text-accent);
 }
 
 .quote-icon {
